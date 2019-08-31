@@ -7,15 +7,11 @@ import AddPerson from '../components/AddPerson/AddPerson';
 import * as actionTypes from '../store/actions';
 
 class Persons extends Component {
-    state = {
-        persons: []
-    }
-
     render () {
         return (
             <div>
                 <AddPerson personAdded={this.props.onAddPerson} />
-                {this.props.people.map(person => (
+                {this.props.ppl.map(person => (
                     <Person
                         key={person.id}
                         name={person.name}
@@ -29,7 +25,7 @@ class Persons extends Component {
 
 const mapStateToProps = state => {
   return {
-    people: state.people
+    ppl: state.people
   }
 }
 
